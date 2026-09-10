@@ -1,0 +1,36 @@
+{
+  "name": "raft-lab",
+  "version": "1.0.0",
+  "description": "Interactive Raft consensus simulator — MIT 6.824-caliber teaching lab with visualization.",
+  "type": "module",
+  "author": "Sumit Kumar Ta (SK090347)",
+  "license": "(MIT OR Apache-2.0)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SK090347/raft-lab.git"
+  },
+  "keywords": [
+    "raft",
+    "consensus",
+    "distributed-systems",
+    "typescript",
+    "simulation",
+    "portfolio"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

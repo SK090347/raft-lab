@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>raft-lab — Interactive Raft Consensus Simulator</title>
+    <link rel="stylesheet" href="/src/ui/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="top">
+        <div class="brand">
+          <h1>raft-lab</h1>
+          <p class="tagline">Interactive Raft consensus · MIT 6.824-caliber teaching simulator</p>
+        </div>
+        <div class="meta">
+          <span id="tick">tick 0</span>
+          <span id="leader-badge" class="badge">no leader</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="viz-panel">
+          <canvas id="canvas" width="900" height="520" aria-label="Raft cluster visualization"></canvas>
+        </section>
+
+        <aside class="controls">
+          <h2>Simulation</h2>
+          <div class="row">
+            <button id="btn-step" type="button">Step</button>
+            <button id="btn-auto" type="button" class="primary">Auto ▶</button>
+            <button id="btn-reset" type="button">Reset</button>
+          </div>
+          <label class="speed">
+            Speed
+            <input id="speed" type="range" min="1" max="20" value="8" />
+          </label>
+
+          <h2>Client</h2>
+          <div class="row">
+            <input id="cmd" type="text" placeholder="command (e.g. set-x=1)" />
+            <button id="btn-submit" type="button" class="primary">Submit</button>
+          </div>
+
+          <h2>Fault injection</h2>
+          <label>
+            Target node
+            <select id="node-select">
+              <option value="0">N0</option>
+              <option value="1">N1</option>
+              <option value="2">N2</option>
+              <option value="3">N3</option>
+              <option value="4">N4</option>
+            </select>
+          </label>
+          <div class="row wrap">
+            <button id="btn-crash" type="button">Crash</button>
+            <button id="btn-restart" type="button">Restart</button>
+            <button id="btn-isolate" type="button">Isolate</button>
+            <button id="btn-heal" type="button">Heal all</button>
+          </div>
+
+          <h2>Event log</h2>
+          <ul id="events" class="events"></ul>
+        </aside>
+
+        <section class="tables">
+          <h2>Node state</h2>
+          <div id="node-table" class="node-table"></div>
+        </section>
+      </main>
+
+      <footer class="foot">
+        <span>Author: Sumit Kumar Ta (SK090347)</span>
+        <a href="https://github.com/SK090347/raft-lab" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://raft.github.io/raft.pdf" target="_blank" rel="noopener">Raft paper</a>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
