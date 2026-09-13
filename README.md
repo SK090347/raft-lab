@@ -1,5 +1,7 @@
 # raft-lab
 
+
+**Live demo:** https://sk090347.github.io/raft-lab/
 I wanted to stop nodding along to Raft blog posts and actually *feel* elections break under partitions. This is a small TypeScript cluster you can step, crash, isolate, and heal — with a canvas UI and Vitest coverage on the state machine.
 
 [![CI](https://github.com/SK090347/raft-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/SK090347/raft-lab/actions/workflows/ci.yml)
